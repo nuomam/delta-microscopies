@@ -1,2 +1,157 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="hero-banner" style="background: url('<%= image_path 'delta-microscopies-hero.jpg' %>'); background-size: cover;">
+  <h1 class="text-center">Des microscopistes<br /> à votre service</h1>
+  <a href="#" class="btn btn-oval btn-white">En savoir plus</a>
+</div>
+<div id="hp-args">
+  <div class="container">
+    <div class="row padded">
+      <div class="col-xs-12 col-sm-4">
+        <div class="arg-content text-center">
+          <div class="arg-icon">
+            <i class="fa fa-question-circle" aria-hidden="true"></i>
+          </div>
+          <div class="arg-text">
+            <h2>Des microscopistes à votre écoute</h2>
+            <p>Notre équipe de microscopistes est à votre écoute pour vous accompagner à <strong>choisir et utiliser les bons produits</strong>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="arg-content text-center">
+          <div class="arg-icon">
+            <i class="fa fa-question-circle" aria-hidden="true"></i>
+          </div>
+          <div class="arg-text">
+            <h2>Qualité de service</h2>
+            <p>Tous les jours, l’équipe Delta Microscopies s’engage à être <strong>réactive</strong> à vos demandes (devis, conseils, livraison..), délivrer des <strong>conseils de qualité</strong> grâce à la compétence de nos équipes et à vous proposer les <strong>meilleurs produits au juste prix</strong>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="arg-content text-center">
+          <div class="arg-icon">
+            <i class="fa fa-question-circle" aria-hidden="true"></i>
+          </div>
+          <div class="arg-text">
+            <h2>Un département R&D dédiée à la microscopie</h2>
+            <p>Notre département R&D a pour mission <strong>d’innover</strong> afin d’améliorer les méthodes de préparation des échantillons et de <strong>créer de nouveaux outils</strong> dédiés à la microscopie électronique.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hp-contact">
+  <div class="container">
+    <div class="row">
+      <div class="hp-contact-content padded">
+        <div class="col-xs-12 col-sm-8">
+          <p>Besoin de conseils ou d'effectuer une commande ?</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <a href="" class="btn btn-white btn-oval">Contactez-nous</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="hp-catalogue">
+  <div class="container">
+    <div class="row padded">
+      <div class="catalogue-block">
+        <div class="col-xs-12 col-sm-4">
+          <%= image_tag 'hitachi-ht7700.jpg', width: 350 %>
+        </div>
+        <div class="col-xs 12 col-sm-8">
+          <div class="catalogue-content">
+            <h3>Plus de 12 000 références à votre disposition</h3>
+            <p>Avec plus de 12 000 références proposées au sein de notre catalogue, nous nous efforçons de trouver les meilleurs produits au meilleur prix. N’hésitez pas à découvrir notre catalogue.</p>
+            <a href="" class="btn btn-oval btn-blue">Voir le catalogue</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<div id="partners">
+  <div class="container padded">
+    <div class="row">
+      <h3>Nos partenaires</h3>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="carousel slide multi-item-carousel" id="theCarousel">
+            <div class="carousel-inner">
+              <div class="item active">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/f44336/000000" class="img-responsive"></a></div>
+              </div>
+              <div class="item">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/e91e63/000000" class="img-responsive"></a></div>
+              </div>
+              <div class="item">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/9c27b0/000000" class="img-responsive"></a></div>
+              </div>
+              <div class="item">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/673ab7/000000" class="img-responsive"></a></div>
+              </div>
+              <div class="item">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/4caf50/000000" class="img-responsive"></a></div>
+              </div>
+              <div class="item">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/8bc34a/000000" class="img-responsive"></a></div>
+              </div>
+              <!-- add  more items here -->
+              <!-- Example item start:  -->
+
+              <div class="item">
+                <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/8bc34a/000000" class="img-responsive"></a></div>
+              </div>
+
+              <!--  Example item end -->
+            </div>
+            <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="hp-contact">
+  <div class="container">
+    <div class="row">
+      <div class="hp-contact-content padded">
+        <div class="col-xs-12 col-sm-8">
+          <p>Besoin de conseils ou d'effectuer une commande ?</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <a href="" class="btn btn-white btn-oval">Contactez-nous</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% content_for(:js) do %>
+  <%= javascript_tag do %>
+    // Instantiate the Bootstrap carousel
+    $('.multi-item-carousel').carousel({
+      interval: false
+    });
+
+    // for every slide in carousel, copy the next slide's item in the slide.
+    // Do the same for the next, next item.
+    $('.multi-item-carousel .item').each(function(){
+      var next = $(this).next();
+      if (!next.length) {
+        next = $(this).siblings(':first');
+      }
+      next.children(':first-child').clone().appendTo($(this));
+
+      if (next.next().length>0) {
+        next.next().children(':first-child').clone().appendTo($(this));
+      } else {
+        $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+      }
+    });
+  <% end %>
+<% end %>

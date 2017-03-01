@@ -2,3 +2,29 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+.arg-icon {
+  font-size: 80px;
+  color: $light-blue;
+}
+
+.hp-contact {
+  background-color: $light-blue;
+}
+
+.hp-contact-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-size: 24px;
+    color: white;
+  }
+}
+
+.catalogue-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
