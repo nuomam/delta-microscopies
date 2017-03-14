@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    </div><div class="col-xs-12 col-md-offset-3 col-sm-6 padded">
+      <div class="simple_form_for">
+        <%= simple_form_for [:deltadmin, @category] do |f| %>
+          <%= f.input :name %>
+          <%= f.submit "Sauvegarder " %>
+        <% end %>
+      </div>
+    </div>
+  </div>
