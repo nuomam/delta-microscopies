@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2><%= @sub_category.name %></h2>
+      <p>Appartient à la catégorie : <%= @sub_category.category.name %></p>
+      <div id="category-action">
+        <%= link_to 'Editer', edit_deltadmin_sub_category_path(@sub_category), class: "btn btn-warning" %>
+        <%= link_to 'Supprimer', deltadmin_sub_category_path(@sub_category), method: :delete, class: "btn btn-danger" %>
+      </div>
+      <% if @sub_category.photo? %>
+        <div id="category-photo" class="text-center">
+          <%= cl_image_tag @sub_category.photo.path, width: 200, height: 300, crop: :fill %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
