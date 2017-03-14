@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Utilisateurs (<%= @users.count %>)</h1>
+      <table class="table">
+        <thead>
+          <th>ID</th>
+          <th>Email</th>
+          <th>Admin</th>
+          <th>Editer</th>
+          <th>Supprimer</th>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %></td>
+            <td><%= link_to user.email, deltadmin_category_path(user) %></td>
+            <td>
+              <% if user.admin? %>
+                <i style="color:green" class="fa fa-check" aria-hidden="true"></i>
+              <% else %>
+                <i style="color:red" class="fa fa-times" aria-hidden="true"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to edit_deltadmin_user_path(user) do %>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to deltadmin_user_path(user), method: :delete, data: { confirm: "Etes-vous sûr ?" } do %>
+                <i class="fa fa-trash " aria-hidden="true"></i>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

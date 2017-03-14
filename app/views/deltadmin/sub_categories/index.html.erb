@@ -2,30 +2,28 @@
   <div class="row">
     <div class="col-xs-12">
       <div id="deltadmin-table-action">
-        <h1>Catégories (<%= @categories.count %>)</h1>
-        <%= link_to 'Créer une catégorie', new_deltadmin_category_path, class: 'btn btn-primary' %>
+        <h1>Sous-catégories (<%= @sub_categories.count %>)</h1>
+        <%= link_to 'Créer une catégorie', new_deltadmin_sub_category_path, class: "btn btn-primary" %>
       </div>
       <table class="table">
         <thead>
           <th>ID</th>
           <th>Nom</th>
-          <th>Sous-catégorie</th>
           <th>Editer</th>
           <th>Supprimer</th>
         </thead>
         <tbody>
-          <% @categories.each do |category| %>
+          <% @sub_categories.each do |sub_category| %>
           <tr>
-            <td><%= category.id %></td>
-            <td><%= link_to category.name, deltadmin_category_path(category) %></td>
-            <td><%= category.sub_categories.count %></td>
+            <td><%= sub_category.id %></td>
+            <td><%= link_to sub_category.name, deltadmin_sub_category_path(sub_category) %></td>
             <td>
-              <%= link_to edit_deltadmin_category_path(category) do %>
+              <%= link_to edit_deltadmin_sub_category_path(sub_category) do %>
                 <i class="fa fa-pencil" aria-hidden="true"></i>
               <% end %>
             </td>
             <td>
-              <%= link_to deltadmin_category_path(category), method: :delete, data: { confirm: "Etes-vous sûr ?" } do %>
+              <%= link_to deltadmin_sub_category_path(sub_category), method: :delete, data: { confirm: "Etes-vous sûr ?" } do %>
                 <i class="fa fa-trash " aria-hidden="true"></i>
               <% end %>
             </td>

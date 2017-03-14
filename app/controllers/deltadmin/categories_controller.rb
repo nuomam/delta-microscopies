@@ -15,14 +15,13 @@ class Deltadmin::CategoriesController < Deltadmin::ApplicationController
     @category = Category.new(category_params)
 
     if @category.save
-      redirect_to deltadmin_categories_path
+      redirect_to deltadmin_category_path(@category)
     else
       render :new
     end
   end
 
   def show
-
   end
 
   def edit
@@ -30,15 +29,13 @@ class Deltadmin::CategoriesController < Deltadmin::ApplicationController
 
   def update
     if @category.update(category_params)
-      redirect_to deltadmin_categories_path
+      redirect_to deltadmin_category_path(@category)
     else
       render :edit
     end
   end
 
-  def delete
-    @category = Category.find(params[:id])
-    raise
+  def destroy
     @category.destroy
     # no need for app/views/restaurants/destroy.html.erb
     redirect_to deltadmin_categories_path
@@ -51,7 +48,7 @@ class Deltadmin::CategoriesController < Deltadmin::ApplicationController
   end
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :photo)
   end
 
 end
