@@ -5,7 +5,7 @@
         <%= simple_form_for [:deltadmin, @category] do |f| %>
           <%= f.input :name %>
           <%= f.input :photo, as: :attachinary %>
-          <%= f.submit "Sauvegarder " %>
+          <%= f.submit "Sauvegarder", class: 'btn btn-primary'%>
         <% end %>
       </div>
     </div>

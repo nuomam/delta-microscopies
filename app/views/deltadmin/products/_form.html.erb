@@ -2,10 +2,19 @@
   <div class="row">
     </div><div class="col-xs-12 col-md-offset-3 col-sm-6 padded">
       <div class="simple_form_for">
-        <%= simple_form_for [:deltadmin, @category] do |f| %>
+        <%= simple_form_for [:deltadmin, @product] do |f| %>
           <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.association :sub_category %>
+          <%= f.association :supplier %>
+          <%= f.input :delta_ref %>
+          <%= f.input :supplier_ref %>
+          <%= f.input :product_number %>
+          <%= f.input :buy_price %>
+          <%= f.input :sell_price %>
+          <%= f.input :active %>
           <%= f.input :photo, as: :attachinary %>
-          <%= f.submit "Sauvegarder " %>
+          <%= f.submit "Sauvegarder", class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>
