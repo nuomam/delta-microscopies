@@ -1,26 +1,35 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1><%= @category.name %></h1>
+      <h1><%= @product.name %></h1>
       <div id="category-action">
-        <%= link_to 'Editer', edit_deltadmin_category_path(@category), class: "btn btn-warning"  %>
-        <%= link_to 'Supprimer', deltadmin_category_path(@category), method: :delete, class: "btn btn-danger" %>
+        <%= link_to 'Editer', edit_deltadmin_product_path(@product), class: "btn btn-warning"  %>
+        <%= link_to 'Supprimer', deltadmin_category_path(@product), method: :delete, class: "btn btn-danger" %>
       </div>
-      <% if @category.photo? %>
+      <% if @product.photo? %>
         <div id="category-photo" class="text-center">
-          <%= cl_image_tag @category.photo.path, width: 200, height: 300, crop: :fill %>
+          <%= cl_image_tag @product.photo.path, width: 200, height: 300, crop: :fill %>
         </div>
       <% end %>
+      <p>Description : <%= @product.description %></p>
+      <p>Sous-catégorie (catégorie) : <%= @product.sub_category.name %> (<%= @product.sub_category.category.name%>)</p>
+      <p>Fournisseur : <%= @product.supplier.name %></p>
       <table class="table">
         <thead>
-        <th>Sous-catégories (<%= @category.sub_categories.count %>)</th>
+          <th>Ref Delta</th>
+          <th>Ref Fournisseur</th>
+          <th>Prod Numb</th>
+          <th>Prix achat</th>
+          <th>Prix vente</th>
         </thead>
         <tbody>
-          <% @category.sub_categories.each do |sub_category| %>
-            <tr>
-              <td><%= link_to sub_category.name, deltadmin_sub_category_path(sub_category) %></td>
-            </tr>
-          <% end %>
+          <tr>
+            <td><%= @product.delta_ref %></td>
+            <td><%= @product.supplier_ref %></td>
+            <td><%= @product.product_number %></td>
+            <td><%= @product.buy_price %></td>
+            <td><%= @product.sell_price %></td>
+          </tr>
         </tbody>
       </table>
     </div>

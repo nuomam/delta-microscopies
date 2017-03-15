@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h1>Catégories</h1>
+      <h1>Produits</h1>
       <div id="deltadmin-table-action">
-        <p><%= @categories.count %> catégories</p>
-        <%= link_to 'Créer une catégorie', new_deltadmin_category_path, class: 'btn btn-primary' %>
+        <p><%= @products.count %> produits</p>
+        <%= link_to 'Créer une catégorie', new_deltadmin_product_path, class: 'btn btn-primary' %>
       </div>
       <table class="table">
         <thead>
@@ -15,18 +15,18 @@
           <th>Supprimer</th>
         </thead>
         <tbody>
-          <% @categories.each do |category| %>
+          <% @products.each do |product| %>
           <tr>
-            <td><%= category.id %></td>
-            <td><%= link_to category.name, deltadmin_category_path(category) %></td>
-            <td><%= category.sub_categories.count %></td>
+            <td><%= product.id %></td>
+            <td><%= link_to product.name, deltadmin_product_path(product) %></td>
+            <td><%= product.sub_category.name %></td>
             <td>
-              <%= link_to edit_deltadmin_category_path(category) do %>
+              <%= link_to edit_deltadmin_product_path(product) do %>
                 <i class="fa fa-pencil" aria-hidden="true"></i>
               <% end %>
             </td>
             <td>
-              <%= link_to deltadmin_category_path(category), method: :delete, data: { confirm: "Etes-vous sûr ?" } do %>
+              <%= link_to deltadmin_product_path(product), method: :delete, data: { confirm: "Etes-vous sûr ?" } do %>
                 <i class="fa fa-trash " aria-hidden="true"></i>
               <% end %>
             </td>
