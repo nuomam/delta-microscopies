@@ -1,3 +1,4 @@
+# Create Categories
 c = ["REACTIFS", "MICROSCOPIE OPTIQUE", "PREPARATION ECHANTILLONS", "PETIT EQUIPEMENT",
   "PINCES-OUTILS PRECISION", "ULTRAMICROTOMIE", "VIDE ET EVAPORATION", "MET MICROSCOPIE ELECTRONIQUE A TRANSMISSION",
   "MEB MICROSCOPIE ELECTRONIQUE A BALAYAGE", "PHOTOGRAPHIE", "STANDARDS ET CALIBRATION"]
@@ -6,6 +7,7 @@ c.each do |category|
   Category.create(name: category)
 end
 
+# Create Sub-categories
 sc_reactifs = ['CHIMIE', 'IMMUNOGOLDS', 'MILIEU DE MONTAGE']
 sc_reactifs.each do |sub_category|
   SubCategory.create(name: sub_category, category_id: 1)
@@ -34,4 +36,11 @@ end
 sc_met = ['GRILLES', 'GRILLES AVEC SUPPORT', 'FILAMENTS ET CATHODES', 'STOCKAGE GRILLES']
 sc_met.each do |sub_category|
   SubCategory.create(name: sub_category, category_id: 8)
+end
+
+# Create Suppliers
+s = [ "AURION", "CARGILLE", "CREATIVE REGIE", "DIATOME Ltd Switzerland", "DIGIT PHOTO", "EMS", "PROZIC", "ROTH Sochiel EURL", "CHROMALYS SAS", "VWR International" ]
+
+s.each do |supplier|
+  Supllier.create(name: supplier)
 end
