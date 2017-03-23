@@ -2,6 +2,7 @@ class Deltadmin::CategoriesController < Deltadmin::ApplicationController
   before_action :set_category , only: [:show, :edit, :update, :destroy]
 
 
+
   def index
     @categories = Category.all.order(name: 'ASC')
     @sub_categories = SubCategory.all
