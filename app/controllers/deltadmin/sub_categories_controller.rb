@@ -48,7 +48,7 @@ class Deltadmin::SubCategoriesController < Deltadmin::ApplicationController
   end
 
   def sub_category_params
-    params.require(:sub_category).permit(:name, :photo)
+    params.require(:sub_category).permit(:name, :category_id, :photo)
   end
 
 end
