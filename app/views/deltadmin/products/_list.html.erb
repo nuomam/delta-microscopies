@@ -1,0 +1,45 @@
+<div id="filterrific_results">
+  <p><%= products.count %> trouvés</p>
+  <table class="table">
+    <thead>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Photo?</th>
+      <th>Sous-catégorie</th>
+      <th>Editer</th>
+      <th>Supprimer</th>
+    </thead>
+    <tbody>
+      <% products.each do |product| %>
+      <tr>
+        <td><%= product.id %></td>
+        <td><%= link_to product.name, deltadmin_product_path(product) %></td>
+        <td>
+          <% if product.photo? %>
+            <i style="color:green" class="fa fa-check" aria-hidden="true"></i>
+          <% else %>
+            <i style="color:red" class="fa fa-times" aria-hidden="true"></i>
+          <% end %>
+        </td>
+        <td><%= product.sub_category.name %></td>
+        <td>
+          <%= link_to edit_deltadmin_product_path(product) do %>
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to deltadmin_product_path(product), method: :delete, data: { confirm: "Etes-vous sûr ?" } do %>
+            <i class="fa fa-trash " aria-hidden="true"></i>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= will_paginate products %>
+</div>
+
+
+
+
+

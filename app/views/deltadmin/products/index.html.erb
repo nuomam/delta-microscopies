@@ -1,47 +1,42 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h1>Produits</h1>
       <div id="deltadmin-table-action">
-        <p><%= @products.count %> produits</p>
-        <%= link_to 'Créer un produit', new_deltadmin_product_path, class: 'btn btn-primary' %>
+        <h1>Produits</h1>
+        <%= link_to 'Créer un produit', new_deltadmin_product_path, class: "btn btn-primary" %>
       </div>
-      <table class="table">
-        <thead>
-          <th>ID</th>
-          <th>Nom</th>
-          <th>Photo?</th>
-          <th>Sous-catégorie</th>
-          <th>Editer</th>
-          <th>Supprimer</th>
-        </thead>
-        <tbody>
-          <% @products.each do |product| %>
-          <tr>
-            <td><%= product.id %></td>
-            <td><%= link_to product.name, deltadmin_product_path(product) %></td>
-            <td>
-              <% if product.photo? %>
-                <i style="color:green" class="fa fa-check" aria-hidden="true"></i>
-              <% else %>
-                <i style="color:red" class="fa fa-times" aria-hidden="true"></i>
-              <% end %>
-            </td>
-            <td><%= product.sub_category.name %></td>
-            <td>
-              <%= link_to edit_deltadmin_product_path(product) do %>
-                <i class="fa fa-pencil" aria-hidden="true"></i>
-              <% end %>
-            </td>
-            <td>
-              <%= link_to deltadmin_product_path(product), method: :delete, data: { confirm: "Etes-vous sûr ?" } do %>
-                <i class="fa fa-trash " aria-hidden="true"></i>
-              <% end %>
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+
+   <div class="well">
+     <%= form_for_filterrific @filterrific do |f| %>
+      <div>
+        Rechercher
+        <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+        <%= f.text_field(
+          :search_query,
+          class: 'filterrific-periodically-observed'
+        ) %>
+      </div>
+      <div>
+      Sous-catégorie
+      <%= f.select(
+        :sub_category,
+        @filterrific.select_options[:sub_category],
+        { include_blank: '- Any -' }
+      ) %>
     </div>
-  </div>
+      <div>
+        <%= link_to(
+          'Réinitialiser les filtres',
+          reset_filterrific_url,
+        ) %>
+      </div>
+      <%# add an automated spinner to your form when the list is refreshed %>
+      <%= render_filterrific_spinner %>
+    <% end %>
+   </div>
+
+  <%= render(
+    partial: 'deltadmin/products/list',
+    locals: { products: @products }
+  ) %>
 </div>
+
+

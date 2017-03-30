@@ -1,10 +1,24 @@
 class Deltadmin::ProductsController < Deltadmin::ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
-
   def index
-    @products = Product.all.order(name: 'ASC')
+    @filterrific = initialize_filterrific(
+      Product,
+      params[:filterrific],
+      select_options: {
+        sorted_by: Product.options_for_sorted_by,
+        sub_category: SubCategory.options_for_select
+      },
+    ) or return
+    @products = @filterrific.find.page(params[:page])
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
+
 
   def new
     @product = Product.new

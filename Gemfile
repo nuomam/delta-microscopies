@@ -24,6 +24,12 @@ gem 'coffee-rails'
 
 
 gem 'pundit'
+gem "wysiwyg-rails"
+gem 'will_paginate', '~> 3.1.0'
+gem 'filterrific'
+
+
+
 
 group :development, :test do
   gem 'binding_of_caller'
