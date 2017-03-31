@@ -1,3 +1,3 @@
  $('.edit-froala').froalaEditor({
-    height: 200
-  });
+  height: 200
+});

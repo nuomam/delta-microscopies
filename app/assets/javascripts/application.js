@@ -5,9 +5,9 @@
 //= require cloudinary/jquery.cloudinary
 //= require attachinary
 //= require filterrific/filterrific-jquery
-
-
 //= require froala_editor.min.js
+//= require_tree .
+
 //= require plugins/align.min.js
 //= require plugins/char_counter.min.js
 //= require plugins/code_beautifier.min.js
@@ -36,12 +36,3 @@
 //= require plugins/special_characters.min.js
 //= require plugins/url.min.js
 //= require plugins/video.min.js
-
-//= require plugins/image.min
-//= require plugins/inline_style.min
-//= require plugins/line_breaker.min
-//= require plugins/lists.min
-
-
-
-//= require_tree .
