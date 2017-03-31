@@ -11,7 +11,7 @@
           <%= cl_image_tag @product.photo.path, width: 200, height: 300, crop: :fill %>
         </div>
       <% end %>
-      <p>Description : <%= @product.description.html_safe %></p>
+      <p>Description : <%= @product.description.nil? ? "" : @product.description.html_safe %></p>
       <p>Sous-catégorie (catégorie) : <%= @product.sub_category.name %> (<%= @product.sub_category.category.name%>)</p>
       <p>Fournisseur : <%= @product.supplier.name %></p>
       <table class="table">
