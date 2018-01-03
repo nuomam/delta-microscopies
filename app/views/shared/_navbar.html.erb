@@ -6,7 +6,9 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
+    <%= link_to 'Nos produits', categories_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+    <%= link_to 'Qui sommes nous', categories_path, class: 'navbar-wagon-item navbar-wagon-link' %>
+    <%= link_to 'Nous contacter', categories_path, class: 'navbar-wagon-item navbar-wagon-link' %>
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
